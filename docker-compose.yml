@@ -1,0 +1,33 @@
+version: '3.8'
+services:
+  gerenciamento:
+    build: ./gerenciamento
+    container_name: gerenciamento
+    ports:
+      - "5001:5001"
+    networks:
+      - micro_net
+
+  reservas:
+    build: ./reservas
+    container_name: reservas
+    ports:
+      - "5002:5002"
+    depends_on:
+      - gerenciamento
+    networks:
+      - micro_net
+
+  atividades:
+    build: ./atividades
+    container_name: atividades
+    ports:
+      - "5003:5003"
+    depends_on:
+      - gerenciamento
+    networks:
+      - micro_net
+
+networks:
+  micro_net:
+    driver: bridge
