@@ -35,21 +35,30 @@ Após clonar o repositório, entre na pasta principal do projeto e execute:
 ```bash
 docker-compose up --build
 
-3. Acessando os serviços
+---
+
+### 3. **Acessando Serviços**
 
 Após a inicialização, os microsserviços estarão disponíveis nos seguintes endereços:
 
 Serviço	URL	Swagger
+
+```bash
 Gerenciamento	http://localhost:5000
 	http://localhost:5000/apidocs
 
+```bash
 Reservas	http://localhost:5001
 	http://localhost:5001/apidocs
 
+```bash
 Atividades	http://localhost:5002
 	http://localhost:5002/apidocs
 
-4. Testando a Integração
+
+---
+
+### 4. **Testando Integração**
 
 Cada microsserviço é independente, mas se comunicam entre si via HTTP.
 
@@ -61,15 +70,19 @@ Reservas utiliza o ID da Turma fornecido pelo serviço de Gerenciamento para cri
 
 Atividades utiliza o ID do Professor e o ID da Turma para vincular atividades e notas.
 
-5. Parando os serviços
+---
+
+### 5. **Parando Serviços**
 
 Para encerrar a execução e remover os containers:
 
+```bash
 docker-compose down
 
 
 Esse comando irá parar todos os microsserviços e limpar os containers criados.
 
+---
 
 🧱 Estrutura do Projeto
 
@@ -105,6 +118,8 @@ A estrutura geral do projeto segue o padrão abaixo:
 ├── docker-compose.yml
 └── README.md
 
+---
+
 🧠 Arquitetura e Design
 
 MVC: separação clara entre Modelos, Controladores e Rotas.
@@ -115,13 +130,23 @@ Comunicação HTTP: integração entre microsserviços feita via requests.
 
 Swagger: documentação automática acessível em /apidocs para cada serviço.
 
+---
+
 🧩 Instruções Rápidas
 Ação	Comando
 Subir o ambiente	docker-compose up --build
 Parar e limpar containers	docker-compose down
+
+```bash
 Acessar Swagger Gerenciamento	http://localhost:5000/apidocs
+
+```bash
 Acessar Swagger Reservas	http://localhost:5001/apidocs
+
+```bash
 Acessar Swagger Atividades	http://localhost:5002/apidocs
+
+---
 
 📋 Conclusão
 
