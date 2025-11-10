@@ -40,6 +40,51 @@ def create_professor():
     """
     return ctrl.create_professor()
 
+@routes.route('/professores/<int:id>', methods=['PUT'])
+def update_professor(id):
+    """
+    ---
+    tags:
+      - Professores
+    summary: Atualiza um professor existente
+    parameters:
+      - in: path
+        name: id
+        type: integer
+        required: true
+      - in: body
+        name: body
+        schema:
+          type: object
+          properties:
+            nome:
+              type: string
+            email:
+              type: string
+    responses:
+      200:
+        description: Professor atualizado com sucesso
+    """
+    return ctrl.update_professor(id)
+
+@routes.route('/professores/<int:id>', methods=['DELETE'])
+def delete_professor(id):
+    """
+    ---
+    tags:
+      - Professores
+    summary: Remove um professor
+    parameters:
+      - in: path
+        name: id
+        type: integer
+        required: true
+    responses:
+      200:
+        description: Professor removido com sucesso
+    """
+    return ctrl.delete_professor(id)
+
 # ---------------- TURMAS ----------------
 @routes.route('/turmas', methods=['GET'])
 def get_turmas():
@@ -76,6 +121,51 @@ def create_turma():
         description: Turma criada com sucesso
     """
     return ctrl.create_turma()
+
+@routes.route('/turmas/<int:id>', methods=['PUT'])
+def update_turma(id):
+    """
+    ---
+    tags:
+      - Turmas
+    summary: Atualiza uma turma existente
+    parameters:
+      - in: path
+        name: id
+        type: integer
+        required: true
+      - in: body
+        name: body
+        schema:
+          type: object
+          properties:
+            nome:
+              type: string
+            professor_id:
+              type: integer
+    responses:
+      200:
+        description: Turma atualizada com sucesso
+    """
+    return ctrl.update_turma(id)
+
+@routes.route('/turmas/<int:id>', methods=['DELETE'])
+def delete_turma(id):
+    """
+    ---
+    tags:
+      - Turmas
+    summary: Remove uma turma
+    parameters:
+      - in: path
+        name: id
+        type: integer
+        required: true
+    responses:
+      200:
+        description: Turma removida com sucesso
+    """
+    return ctrl.delete_turma(id)
 
 # ---------------- ALUNOS ----------------
 @routes.route('/alunos', methods=['GET'])
@@ -115,3 +205,50 @@ def create_aluno():
         description: Aluno criado com sucesso
     """
     return ctrl.create_aluno()
+
+@routes.route('/alunos/<int:id>', methods=['PUT'])
+def update_aluno(id):
+    """
+    ---
+    tags:
+      - Alunos
+    summary: Atualiza um aluno existente
+    parameters:
+      - in: path
+        name: id
+        type: integer
+        required: true
+      - in: body
+        name: body
+        schema:
+          type: object
+          properties:
+            nome:
+              type: string
+            email:
+              type: string
+            turma_id:
+              type: integer
+    responses:
+      200:
+        description: Aluno atualizado com sucesso
+    """
+    return ctrl.update_aluno(id)
+
+@routes.route('/alunos/<int:id>', methods=['DELETE'])
+def delete_aluno(id):
+    """
+    ---
+    tags:
+      - Alunos
+    summary: Remove um aluno
+    parameters:
+      - in: path
+        name: id
+        type: integer
+        required: true
+    responses:
+      200:
+        description: Aluno removido com sucesso
+    """
+    return ctrl.delete_aluno(id)
