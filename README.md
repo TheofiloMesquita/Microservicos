@@ -87,42 +87,6 @@ Esse comando irá parar todos os microsserviços e limpar os containers criados.
 
 ---
 
-🧱 Estrutura do Projeto
-
-A estrutura geral do projeto segue o padrão abaixo:
-
-├── gerenciamento/
-│   ├── app.py
-│   ├── controllers.py
-│   ├── models.py
-│   ├── database.py
-│   ├── routes.py
-│   ├── requirements.txt
-│   └── Dockerfile
-│
-├── reservas/
-│   ├── app.py
-│   ├── controllers.py
-│   ├── models.py
-│   ├── database.py
-│   ├── routes.py
-│   ├── requirements.txt
-│   └── Dockerfile
-│
-├── atividades/
-│   ├── app.py
-│   ├── controllers.py
-│   ├── models.py
-│   ├── database.py
-│   ├── routes.py
-│   ├── requirements.txt
-│   └── Dockerfile
-│
-├── docker-compose.yml
-└── README.md
-
----
-
 🧠 Arquitetura e Design
 
 MVC: separação clara entre Modelos, Controladores e Rotas.
