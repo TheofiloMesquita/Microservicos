@@ -34,6 +34,7 @@ Após clonar o repositório, entre na pasta principal do projeto e execute:
 
 ```bash
 docker-compose up --build
+```
 
 ---
 
@@ -46,15 +47,17 @@ Serviço	URL	Swagger
 ```bash
 Gerenciamento	http://localhost:5000
 	http://localhost:5000/apidocs
+```
 
 ```bash
 Reservas	http://localhost:5001
 	http://localhost:5001/apidocs
+```
 
 ```bash
 Atividades	http://localhost:5002
 	http://localhost:5002/apidocs
-
+```
 
 ---
 
@@ -78,7 +81,7 @@ Para encerrar a execução e remover os containers:
 
 ```bash
 docker-compose down
-
+```
 
 Esse comando irá parar todos os microsserviços e limpar os containers criados.
 
@@ -139,12 +142,15 @@ Parar e limpar containers	docker-compose down
 
 ```bash
 Acessar Swagger Gerenciamento	http://localhost:5000/apidocs
+```
 
 ```bash
 Acessar Swagger Reservas	http://localhost:5001/apidocs
+```
 
 ```bash
 Acessar Swagger Atividades	http://localhost:5002/apidocs
+```
 
 ---
 
