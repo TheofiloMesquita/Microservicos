@@ -25,7 +25,7 @@ swagger_config = {
     "specs_route": "/apidocs/"
 }
 
-swagger = Swagger(app, config=swagger_config, template_file=None)
+swagger = Swagger(app, config=swagger_config)
 
 @app.before_request
 def initialize_database():
@@ -33,6 +33,10 @@ def initialize_database():
         with app.app_context():
             db.create_all()
             app.db_initialized = True
+
+@app.route("/")
+def home():
+    return "🚀 Serviço de GERENCIAMENTO está rodando com sucesso!"
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5001)
