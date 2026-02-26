@@ -1,26 +1,49 @@
-# 🏫 Sistema de Microsserviços Flask — Gestão Escolar
+# 🏗 Sistema de Microsserviços Flask — Gestão Escolar
 
-Este projeto implementa um ecossistema de **três microsserviços independentes**, que juntos formam um sistema de gestão escolar completo.
+Este projeto implementa uma arquitetura baseada em microsserviços, composta por três serviços independentes que juntos formam um sistema completo de gestão escolar.
+
+Cada serviço possui seu próprio banco de dados, lógica de negócio isolada e comunicação via HTTP.
+
+---
 
 ## 📦 Microsserviços
 
-1. **Gerenciamento** — CRUD de Professores, Turmas e Alunos.  
-2. **Reservas** — CRUD de Reservas de Salas, vinculadas às Turmas.  
-3. **Atividades** — CRUD de Atividades e Notas, vinculadas às Turmas e Professores.  
+### 1️⃣ Gerenciamento
+Responsável pelo CRUD de:
+- Professores
+- Turmas
+- Alunos
+
+### 2️⃣ Reservas
+Responsável pelo CRUD de:
+- Reservas de salas
+- Vinculação com Turmas via comunicação HTTP
+
+### 3️⃣ Atividades
+Responsável pelo CRUD de:
+- Atividades
+- Notas
+- Associação com Professores e Turmas
 
 ---
 
-## ⚙️ Arquitetura
+## 🧠 Arquitetura
 
-- Cada serviço segue o padrão **MVC (Model-View-Controller)**.  
-- Cada microsserviço possui seu próprio banco **SQLite** independente.  
-- Comunicação entre serviços via **HTTP** utilizando a biblioteca `requests`.  
-- Documentação interativa da API disponível via **Swagger** em `/apidocs`.  
-- Orquestração dos serviços com **Docker Compose**.  
+- Padrão MVC (Model-View-Controller)
+- Banco de dados independente por serviço (SQLite)
+- Comunicação entre serviços via HTTP (biblioteca `requests`)
+- Documentação interativa via Swagger em `/apidocs`
+- Orquestração com Docker Compose
 
 ---
 
-## 🚀 Execução com Docker
+## 🐳 Execução com Docker
+
+### Subir ambiente:
+
+```bash
+docker-compose up --build
+```
 
 ### 1. **Pré-requisitos**
 Certifique-se de ter o **Docker** e o **Docker Compose** instalados.  
